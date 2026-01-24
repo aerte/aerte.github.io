@@ -19,12 +19,12 @@ export function BlogPosts() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="group block border border-neutral-300 dark:border-neutral-800 rounded-lg overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-700 transition-colors bg-neutral-50 dark:bg-neutral-900"
+            className="group block border border-blue-200 dark:border-blue-200 rounded-lg overflow-hidden hover:border-blue-400 dark:hover:border-blue-400 transition-colors bg-blue-50 dark:bg-blue-50"
             href={`/blog/${post.slug}`}
           >
             <div className="flex flex-col sm:flex-row">
               {/* Image section */}
-              <div className="sm:w-48 sm:h-48 h-48 bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 flex items-center justify-center border-b sm:border-b-0 sm:border-r border-neutral-300 dark:border-neutral-700">
+              <div className="sm:w-48 sm:h-48 h-48 bg-blue-100 dark:bg-blue-100 flex-shrink-0 flex items-center justify-center border-b sm:border-b-0 sm:border-r border-blue-200 dark:border-blue-200">
                 {post.metadata.image ? (
                   <Image
                     src={post.metadata.image}
@@ -40,13 +40,13 @@ export function BlogPosts() {
               
               {/* Content section */}
               <div className="flex-1 p-6">
-                <p className="text-sm text-neutral-700 dark:text-neutral-400 mb-2 tabular-nums">
+                <p className="text-sm text-slate-600 dark:text-slate-600 mb-2 tabular-nums">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
-                <h2 className="text-xl font-semibold text-black dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-900 mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-700 transition-colors">
                   {post.metadata.title}
                 </h2>
-                <p className="text-neutral-800 dark:text-neutral-400 text-sm line-clamp-2">
+                <p className="text-slate-700 dark:text-slate-700 text-sm line-clamp-2">
                   {post.metadata.summary}
                 </p>
               </div>

@@ -1,13 +1,22 @@
 @import 'tailwindcss';
 
+/* Custom fonts */
+@theme {
+  --font-mono: var(--font-chivo-mono);
+}
+
+body {
+  font-family: var(--font-chivo-mono), monospace;
+}
+
 /* Custom background color */
 html {
-  background-color: #fafafa !important;
+  background-color: #f0f4f8 !important; /* Light blue-gray */
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    background-color: #000000 !important;
+    background-color: #f0f4f8 !important; /* Same light blue for dark mode */
   }
 }
 
@@ -16,31 +25,31 @@ html {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #f0f4f8;
 }
 @media (prefers-color-scheme: dark) {
   ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #f0f4f8;
   }
 }
 ::-webkit-scrollbar-thumb {
-  background: #e2e8f0;
+  background: #cbd5e1;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
+  background: #3b82f6;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(139, 92, 246, 0.2);
-  color: #1a202c;
+  background: rgba(59, 130, 246, 0.3);
+  color: #1e3a8a;
 }
 
 @media (prefers-color-scheme: dark) {
   ::selection {
-    background: rgba(139, 92, 246, 0.3);
-    color: #fefefe;
+    background: rgba(59, 130, 246, 0.3);
+    color: #1e3a8a;
   }
 }
 
@@ -50,26 +59,26 @@ html {
 }
 
 :root {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
+  --sh-class: #1e40af; /* blue-800 */
+  --sh-identifier: #334155; /* slate-700 */
+  --sh-sign: #64748b; /* slate-500 */
+  --sh-string: #0284c7; /* sky-600 */
+  --sh-keyword: #2563eb; /* blue-600 */
+  --sh-comment: #94a3b8; /* slate-400 */
+  --sh-jsxliterals: #3b82f6; /* blue-500 */
+  --sh-property: #1d4ed8; /* blue-700 */
+  --sh-entity: #1d4ed8; /* blue-700 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
+    --sh-class: #1e40af;
+    --sh-identifier: #334155;
+    --sh-keyword: #2563eb;
+    --sh-string: #0284c7;
   }
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 }
 
@@ -92,11 +101,11 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all decoration-blue-400 dark:decoration-blue-400 underline-offset-2 decoration-[0.1em] text-blue-600 hover:text-blue-800;
 }
 
 .prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
+  @apply text-blue-300 dark:text-blue-300;
   content: '#';
 }
 
@@ -105,11 +114,11 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  @apply bg-blue-50 dark:bg-blue-50 rounded-lg overflow-x-auto border border-blue-200 dark:border-blue-200 py-2 px-3 text-sm text-slate-800;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply px-1 py-0.5 rounded-lg bg-blue-100 text-blue-900;
 }
 
 .prose pre code {
@@ -128,35 +137,35 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-4 text-slate-800 dark:text-slate-800;
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2 text-blue-800;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight mt-6 mb-2 text-blue-700;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight mt-6 mb-2 text-blue-700;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-medium tracking-tight mt-6 mb-2 text-blue-600;
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-medium text-blue-900;
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-6 marker:text-blue-500;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 marker:text-blue-500;
 }
 
 .prose > :first-child {
