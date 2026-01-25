@@ -50,10 +50,9 @@ export default function Page() {
           I believe that Machine Learning methods must be both explainable (trust-worthy) and efficient (scalable).
         </p>
         <p className="text-slate-800 dark:text-slate-800">
-          Outside of AI4X, my personal passions are with time-series data and small language models. Weather forecasting for example is a fascinating problem,
+          Outside of AI4X, my personal passions are time-series data and small language models. Weather forecasting is fx. a fascinating problem,
           it requires the model to both be able to capture complex physical systems and the dynamics of change therein. 
-          SMLs are cool too, they capture the struggle between compuational limitations and power so well. In the future, I hope to be able to run a Opus quality model on my laptop.
-
+          SMLs are cool too, they capture the pareto frontier of compute and intelligence so well. In the future, I hope to be able to run a Opus quality model on my laptop.
         </p>
       </section>
 
