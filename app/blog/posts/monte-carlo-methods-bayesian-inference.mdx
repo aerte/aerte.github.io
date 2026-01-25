@@ -1,0 +1,103 @@
+---
+title: 'Monte Carlo Methods in Bayesian Inference'
+publishedAt: '2025-01-05'
+summary: 'Monte Carlo methods have revolutionized Bayesian inference by enabling us to approximate complex posterior distributions that would otherwise be analytically intractable. This post explores the fundamental concepts behind these powerful techniques.'
+image: '/avatar.png'
+---
+
+## The Monte Carlo Principle
+
+At its core, Monte Carlo integration approximates expectations by averaging function evaluations at randomly sampled points. For Bayesian inference, this allows us to compute posterior expectations without knowing the normalizing constant.
+
+> **The basic Monte Carlo estimator:**
+> 
+> $$\mathbb{E}[f(\theta) | \mathbf{y}] \approx \frac{1}{S} \sum_{s=1}^S f(\theta^{(s)})$$
+> 
+> where $\theta^{(s)} \sim p(\theta | \mathbf{y})$
+
+## Markov Chain Monte Carlo (MCMC)
+
+While basic Monte Carlo requires independent samples from the target distribution, MCMC methods generate correlated samples that converge to the target distribution as the chain runs longer.
+
+### Metropolis-Hastings Algorithm
+
+The Metropolis-Hastings algorithm is one of the most fundamental MCMC methods:
+
+```python
+import numpy as np
+from scipy.stats import norm
+
+def metropolis_hastings(target_logpdf, proposal_sampler, x0, n_samples, burnin=1000):
+    """
+    Metropolis-Hastings MCMC sampler
+
+    Parameters:
+    - target_logpdf: log probability density function of target distribution
+    - proposal_sampler: function that samples from proposal distribution
+    - x0: initial state
+    - n_samples: number of samples to generate
+    - burnin: number of initial samples to discard
+    """
+    samples = []
+    x = x0
+    accepted = 0
+
+    for i in range(n_samples + burnin):
+        # Propose new state
+        x_prop = proposal_sampler(x)
+
+        # Calculate acceptance ratio
+        log_ratio = target_logpdf(x_prop) - target_logpdf(x)
+        if np.log(np.random.random()) < log_ratio:
+            x = x_prop
+            if i >= burnin:
+                accepted += 1
+
+        if i >= burnin:
+            samples.append(x)
+
+    acceptance_rate = accepted / n_samples
+    print(f"Acceptance rate: {acceptance_rate:.3f}")
+
+    return np.array(samples)
+
+# Example: Sampling from a mixture of Gaussians
+def mixture_logpdf(x):
+    return np.log(0.3 * norm.pdf(x, -2, 0.5) + 0.7 * norm.pdf(x, 3, 1.5))
+
+def proposal_sampler(x):
+    return x + np.random.normal(0, 1)  # Random walk proposal
+
+# Generate samples
+samples = metropolis_hastings(mixture_logpdf, proposal_sampler, 0, 5000)
+
+print(f"Sample mean: {np.mean(samples):.3f}")
+print(f"Sample std: {np.std(samples):.3f}")
+```
+
+## Hamiltonian Monte Carlo (HMC)
+
+HMC uses gradient information to propose more efficient moves, especially effective for high-dimensional problems. The algorithm simulates a particle moving on a potential energy surface defined by the negative log posterior.
+
+> **Hamiltonian dynamics:**
+> 
+> $$\frac{d\theta}{dt} = \frac{\partial H}{\partial p} = p$$
+> 
+> $$\frac{dp}{dt} = -\frac{\partial H}{\partial \theta} = -\nabla_\theta \log p(\theta | \mathbf{y})$$
+
+## Practical Considerations
+
+- **Convergence diagnostics:** Always check for convergence using multiple chains and diagnostic tests
+- **Effective sample size:** High autocorrelation reduces the effective number of independent samples
+- **Tuning:** Proposal distributions and step sizes significantly impact performance
+- **Initialization:** Poor starting points can lead to slow mixing or getting stuck in local modes
+
+> **💡 Key Takeaway**
+> 
+> MCMC methods transform the problem of computing complex integrals into the problem of simulating correlated random walks. While they require careful implementation and monitoring, they enable Bayesian inference in problems where analytical solutions are impossible.
+
+## Modern Applications
+
+In modern probabilistic programming languages like PyMC3, Stan, and Pyro, these algorithms are implemented with sophisticated tuning procedures, making Bayesian inference accessible to practitioners across disciplines.
+
+The combination of MCMC methods with deep learning architectures has led to Bayesian neural networks, enabling uncertainty quantification in complex prediction tasks. As computational power continues to grow, we can expect MCMC methods to play an increasingly important role in machine learning and scientific computing.
