@@ -18,41 +18,6 @@ function ArrowIcon() {
 export default function Footer() {
   return (
     <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-slate-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-slate-600">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-blue-700 dark:hover:text-blue-700"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="/rss"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-blue-700 dark:hover:text-blue-700"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/aerte"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-blue-700 dark:hover:text-blue-700"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://linkedin.com/in/yourusername"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">linkedin</p>
-          </a>
-        </li>
-      </ul>
       <p className="mt-8 text-slate-600 dark:text-slate-600">
         © {new Date().getFullYear()} Felix Aertebjerg. All rights reserved.
       </p>

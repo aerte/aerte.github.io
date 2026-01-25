@@ -1,6 +1,6 @@
 import { getBlogPosts } from 'app/blog/utils'
 
-export const baseUrl = 'https://your-domain.vercel.app' // Update with your actual domain
+export const baseUrl = 'https://aerte.github.io'
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
