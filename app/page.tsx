@@ -61,7 +61,8 @@ export default function Page() {
         <h2 className="text-xl font-bold text-indigo-700 mb-3 pb-1 border-b-2 border-indigo-600 inline-block">News</h2>
         <ul className="space-y-2">
           <li className="text-slate-800 dark:text-slate-800">
-            Coming soon...
+            <span className="font-semibold text-indigo-600 mr-3 text-sm">[Jan 2026]</span> 
+            The preprint of ELECTRAFI is out! <a href="https://arxiv.org/html/2601.19966v1" className="text-indigo-600 hover:text-indigo-800 transition-all duration-200">arXiv:2601.13351</a>
           </li>
           {/* <li className="text-slate-800 dark:text-slate-800">
             <span className="font-semibold text-indigo-600 mr-3 text-sm">[Jan 2026]</span> 
