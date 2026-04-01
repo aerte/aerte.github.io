@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     default: 'Felix Aertebjerg',
     template: '%s | Felix Aertebjerg',
   },
-  description: 'PhD Student at Denmark\'s Technical University. Focus on machine learning and probabilistic modeling applied in the sciences.',
+  description: 'PhD Student at Denmark\'s Technical University, DTU Energy. Focus on machine learning and probabilistic modeling applied in material sciences.',
   openGraph: {
     title: 'Felix Aertebjerg',
-    description: 'PhD Student at Denmark\'s Technical University. Focus on machine learning and probabilistic modeling applied in the sciences.',
+    description: 'PhD Student at Denmark\'s Technical University, DTU Energy. Focus on machine learning and probabilistic modeling applied in material sciences.',
     url: baseUrl,
     siteName: 'Felix Aertebjerg',
     locale: 'en_US',

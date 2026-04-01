@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { PublicationsList } from './components/PublicationsList'
 
 export default function Page() {
   return (
@@ -44,9 +45,9 @@ export default function Page() {
       <section className="mb-8">
         <h2 className="text-xl font-bold text-indigo-700 mb-3 pb-1 border-b-2 border-indigo-600 inline-block">About Me</h2>
         <p className="mb-4 text-slate-800 dark:text-slate-800">
-          Fresh PhD student at DTU Energy.
-          My focus areas are geometric deep learning and porbabilistic modeling applied to the sciences, with a particular focus on 
-          solids. My approach is to embrace modern compute and algorithms and to adapt them to physically meaningful representations. Specifically,
+          PhD student at DTU Energy and supervised by Assistant Prof. Arghya Bhowmik, as well as co-supervised by Prof. Juan Maria García Lastra.
+          My focus areas are geometric deep learning and probabilistic modeling applied to the sciences, with a particular focus on 
+          solids and battery materials. My approach is to embrace modern compute and algorithms and to adapt them to physically meaningful representations. Specifically,
           I believe that Machine Learning methods must be both explainable (trust-worthy) and efficient (scalable).
         </p>
         <p className="text-slate-800 dark:text-slate-800">
@@ -82,7 +83,7 @@ export default function Page() {
       {/* Publications */}
       <section className="mb-8">
         <h2 className="text-xl font-bold text-indigo-700 mb-3 pb-1 border-b-2 border-indigo-600 inline-block">Publications</h2>
-        <p className="text-slate-700 dark:text-slate-700">Coming soon...</p>
+        <PublicationsList myName="Felix Ærtebjerg" />
       </section>
 
       {/* Research Interests */}
