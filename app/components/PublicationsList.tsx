@@ -91,7 +91,11 @@ function PubEntry({ pub, myName }: { pub: Publication; myName: string }) {
           ))}
         </p>
 
-        <p className="text-sm text-slate-500 italic mb-2">{pub.venue}</p>
+        <p className="text-sm mb-2">
+          <span className="px-2 py-1 bg-blue-100 text-blue-700 font-semibold rounded text-sm tracking-wide">
+            {pub.venue}
+          </span>
+        </p>
 
         <div className="flex flex-wrap gap-2 text-xs">
           {pub.arxiv && (

@@ -9,14 +9,15 @@
   font-display: swap;
 }
 
-/* Custom fonts */
 @theme {
-  /* --font-mono: var(--font-chivo-mono); */
-  --font-mono: "Departure Mono", monospace;
+  --font-mono: var(--font-chivo-mono), monospace;
 }
 
 body {
-  /* font-family: var(--font-chivo-mono), monospace; */
+  font-family: var(--font-chivo-mono), monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: "Departure Mono", monospace;
 }
 

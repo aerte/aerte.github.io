@@ -1,16 +1,16 @@
 import './global.css'
 import 'katex/dist/katex.min.css'
 import type { Metadata } from 'next'
-// import { Chivo_Mono } from 'next/font/google'
+import { Chivo_Mono } from 'next/font/google'
 import { Navbar } from './components/nav'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 
-// const chivoMono = Chivo_Mono({ 
-//   subsets: ['latin'],
-//   weight: ['300', '400', '500', '600', '700'],
-//   variable: '--font-chivo-mono',
-// })
+const chivoMono = Chivo_Mono({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-chivo-mono',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -52,7 +52,7 @@ export default function RootLayout({
       lang="en"
       className={cx(
         'text-slate-900 bg-[#f0f4f8] dark:text-slate-900 dark:bg-[#f0f4f8]',
-        // chivoMono.variable
+        chivoMono.variable
       )}
     >
       <body className="antialiased max-w-3xl mx-4 mt-8 lg:mx-auto">
