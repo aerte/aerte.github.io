@@ -21,6 +21,9 @@ export default function Footer() {
       <p className="mt-8 text-slate-600 dark:text-slate-600">
         © {new Date().getFullYear()} Felix Aertebjerg. All rights reserved.
       </p>
+      <p className="mt-2 text-xs text-slate-400">
+        Font: <a href="https://departuremono.com" className="underline hover:text-slate-600" target="_blank" rel="noopener noreferrer">Departure Mono</a>
+      </p>
     </footer>
   )
 }

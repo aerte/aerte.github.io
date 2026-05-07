@@ -20,7 +20,7 @@ const publications: Publication[] = [
     date: 'Feb 2026',
     title: 'Global Plane Waves From Local Gaussians: Periodic Charge Densities in a Blink',
     authors: ['Jonas Elsborg', 'Felix Ærtebjerg',  'Luca Thiede', 'Alán Aspuru-Guzik', 'Tejs Vegge', 'Arghya Bhowmik'],
-    venue: 'Preprint, 2026',
+    venue: 'ICML',
     arxiv: 'https://arxiv.org/abs/2601.19966v1',
     thumb: '/papers/electrafi.png',
     bibtex: `@misc{elsborg2026globalplanewaveslocal,
