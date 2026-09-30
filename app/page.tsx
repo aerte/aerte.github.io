@@ -60,26 +60,33 @@ export default function Page() {
       {/* News */}
       <section className="mb-8">
         <h2 className="text-xl font-bold text-indigo-700 mb-3 pb-1 border-b-2 border-indigo-600 inline-block">News</h2>
-        <ul className="space-y-2">
-          <li className="text-slate-800 dark:text-slate-800">
-            <span className="font-semibold text-indigo-600 mr-3 text-sm">[May 2026]</span> 
-            ELECTRAFI was accepted to ICML! 🔥
+        <ul className="ml-1.5 border-l-2 border-indigo-200 space-y-4">
+          <li className="relative pl-5">
+            <span className="absolute -left-1.5 top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-600" />
+            <span className="inline-block mb-1 px-2 py-0.5 bg-indigo-50 border border-indigo-200 rounded text-xs font-semibold text-indigo-700">Sep 2026</span>
+            <p className="text-slate-800 dark:text-slate-800">"Complete Neural Electronic Initialization Accelerates Materials DFT" was accepted at the Sim2Science workshop at NeurIPS 2026! ☄️</p>
           </li>
-          <li className="text-slate-800 dark:text-slate-800">
-            <span className="font-semibold text-indigo-600 mr-3 text-sm">[Jan 2026]</span> 
-            The preprint of ELECTRAFI is out! <a href="https://arxiv.org/html/2601.19966v1" className="text-indigo-600 hover:text-indigo-800 transition-all duration-200">arXiv:2601.13351</a>
+          <li className="relative pl-5">
+            <span className="absolute -left-1.5 top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-600" />
+            <span className="inline-block mb-1 px-2 py-0.5 bg-indigo-50 border border-indigo-200 rounded text-xs font-semibold text-indigo-700">Sep 2026</span>
+            <p className="text-slate-800 dark:text-slate-800">A new preprint is out: <a href="https://arxiv.org/html/2609.21759" className="text-indigo-600 hover:text-indigo-800 transition-all duration-200">arXiv:2609.21759</a> ("Complete Neural Electronic Initialization Accelerates Materials DFT")!
+            We initialize all the PAW DFT components and achieve end-to-end speed-ups in VASP for non-magnetic & magnetic crystals.</p>
           </li>
-          {/* <li className="text-slate-800 dark:text-slate-800">
-            <span className="font-semibold text-indigo-600 mr-3 text-sm">[Jan 2026]</span> 
-            Your latest news or achievement here
+          <li className="relative pl-5">
+            <span className="absolute -left-1.5 top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-300" />
+            <span className="inline-block mb-1 px-2 py-0.5 bg-indigo-50 border border-indigo-200 rounded text-xs font-semibold text-indigo-700">May 2026</span>
+            <p className="text-slate-800 dark:text-slate-800">ELECTRAFI was accepted to ICML! 🔥</p>
           </li>
-          <li className="text-slate-800 dark:text-slate-800">
-            <span className="font-semibold text-indigo-600 mr-3 text-sm">[Dec 2025]</span> 
-            Another update or milestone
+          <li className="relative pl-5">
+            <span className="absolute -left-1.5 top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-300" />
+            <span className="inline-block mb-1 px-2 py-0.5 bg-indigo-50 border border-indigo-200 rounded text-xs font-semibold text-indigo-700">Jan 2026</span>
+            <p className="text-slate-800 dark:text-slate-800">The preprint of ELECTRAFI is out! <a href="https://arxiv.org/html/2601.19966" className="text-indigo-600 hover:text-indigo-800 transition-all duration-200">arXiv:2601.19966</a></p>
           </li>
-          <li className="text-slate-800 dark:text-slate-800">
-            <span className="font-semibold text-indigo-600 mr-3 text-sm">[Nov 2025]</span> 
-            Previous news item
+          {/* Template (use bg-indigo-600 on the dot for new items, bg-indigo-300 for older ones):
+          <li className="relative pl-5">
+            <span className="absolute -left-1.5 top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-600" />
+            <span className="inline-block mb-1 px-2 py-0.5 bg-indigo-50 border border-indigo-200 rounded text-xs font-semibold text-indigo-700">Mon YYYY</span>
+            <p className="text-slate-800 dark:text-slate-800">Your news here</p>
           </li> */}
         </ul>
       </section>

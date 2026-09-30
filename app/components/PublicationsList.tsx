@@ -12,10 +12,29 @@ type Publication = {
   pdf?: string
   code?: string
   thumb?: string     // path in /public, e.g. "/papers/electrafi.png"
+  thumbFit?: 'cover' | 'contain'  // contain = show the whole image instead of cropping (default cover)
   bibtex?: string
 }
 
 const publications: Publication[] = [
+  {
+    date: 'Sep 2026',
+    title: 'Complete Neural Electronic Initialization Accelerates Materials DFT',
+    authors: ['Felix Ærtebjerg', 'Jonas Elsborg', 'Arghya Bhowmik'],
+    venue: 'Preprint',
+    arxiv: 'https://arxiv.org/abs/2609.21759',
+    thumb: '/papers/complete-init.png',
+    thumbFit: 'contain',
+    bibtex: `@misc{aertebjerg2026completeneuralelectronic,
+      title={Complete Neural Electronic Initialization Accelerates Materials DFT},
+      author={Felix Ærtebjerg and Jonas Elsborg and Arghya Bhowmik},
+      year={2026},
+      eprint={2609.21759},
+      archivePrefix={arXiv},
+      primaryClass={cond-mat.mtrl-sci},
+      url={https://arxiv.org/abs/2609.21759},
+}`,
+  },
   {
     date: 'Feb 2026',
     title: 'Global Plane Waves From Local Gaussians: Periodic Charge Densities in a Blink',
@@ -35,7 +54,7 @@ const publications: Publication[] = [
   },
 ]
 
-function PubThumb({ src, title }: { src?: string; title: string }) {
+function PubThumb({ src, title, fit }: { src?: string; title: string; fit?: 'cover' | 'contain' }) {
   const initials = title
     .split(' ')
     .filter(w => w.length > 3)
@@ -45,14 +64,14 @@ function PubThumb({ src, title }: { src?: string; title: string }) {
 
   if (src) {
     return (
-      <div className="flex-shrink-0 w-28 h-20 rounded border border-slate-200 overflow-hidden bg-slate-100">
-        <Image src={src} alt={`${title} thumbnail`} width={112} height={80} className="object-cover w-full h-full" />
+      <div className="flex-shrink-0 w-28 h-20 sm:w-36 sm:h-24 rounded border border-slate-200 overflow-hidden bg-slate-100">
+        <Image src={src} alt={`${title} thumbnail`} width={144} height={96} className={`${fit === 'contain' ? 'object-contain bg-white' : 'object-cover'} w-full h-full`} />
       </div>
     )
   }
 
   return (
-    <div className="flex-shrink-0 w-28 h-20 rounded border border-indigo-100 bg-indigo-50 flex items-center justify-center">
+    <div className="flex-shrink-0 w-28 h-20 sm:w-36 sm:h-24 rounded border border-indigo-100 bg-indigo-50 flex items-center justify-center">
       <span className="text-xl font-bold text-indigo-300 tracking-widest">{initials}</span>
     </div>
   )
@@ -73,7 +92,7 @@ function PubEntry({ pub, myName }: { pub: Publication; myName: string }) {
 
   return (
     <li className="flex gap-4">
-      <PubThumb src={pub.thumb} title={pub.title} />
+      <PubThumb src={pub.thumb} title={pub.title} fit={pub.thumbFit} />
 
       <div className="flex-1 min-w-0">
         <p className="font-semibold text-slate-900 dark:text-slate-900 leading-snug mb-1">
